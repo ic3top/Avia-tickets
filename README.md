@@ -37,6 +37,7 @@ To-do list:
 * Add toasts messages
 * Change '_add to favourites_' button on click
 * Improve dropdown (favourites)
+* Adapt the application better
 
 ## Status
 Project is: _in progress_(require some improvements)
