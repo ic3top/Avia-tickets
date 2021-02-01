@@ -41,4 +41,5 @@ To-do list:
 * Adapt the application better ✓
 
 ## Status
-Project is: _in progress_(bug with currency in favourites)
+Project is: _in progress_
+(bug with currency in favourites)
