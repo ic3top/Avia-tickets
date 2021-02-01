@@ -14,9 +14,9 @@ I decided to practice using webpack and modular structure, js-classes, ajax requ
 Also I tried the Materialize framework (which I don't recommend using).
 
 ## Screenshots
-![Example screenshot](./img/screenshot_1.png)
-![Example screenshot](./img/screenshot_2.png)
-![Example screenshot](./img/screenshot_3.png)
+![Example screenshot](./src/img/screenshot_1.png)
+![Example screenshot](./src/img/screenshot_2.png)
+![Example screenshot](./src/img/screenshot_3.png)
 
 ## Technologies
 * axios: 0.21.1
