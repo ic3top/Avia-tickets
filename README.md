@@ -35,10 +35,10 @@ Also I tried the Materialize framework (which I don't recommend using).
 * Local storage saves favourites
 
 To-do list:
-* Add toasts messages
-* Change '_add to favourites_' button on click
-* Improve dropdown (favourites)
-* Adapt the application better
+* Add toasts messages ✓
+* Change '_add to favourites_' button on click ✓
+* Improve dropdown (favourites) ✓
+* Adapt the application better ✓
 
 ## Status
-Project is: _in progress_(require some improvements)
+Project is: _in progress_(bug with currency in favourites)
