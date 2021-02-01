@@ -19,9 +19,10 @@ Also I tried the Materialize framework (which I don't recommend using).
 ![Example screenshot](./src/img/screenshot_3.png)
 
 ## Technologies
+* materialize-css: 1.0.0-rc.2 _(kinda out-of-date, I know)_
+###### and additionally:
 * axios: 0.21.1
 * date-fns: 2.16.1
-* materialize-css: 1.0.0-rc.2 _(kinda out-of-date, I know)_
 
 ## Setup
 [GitHub pages](https://ic3top.github.io/Avia-tickets/dist/)
