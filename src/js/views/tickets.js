@@ -1,5 +1,5 @@
 import currencyUI from './currency';
-import { de } from 'date-fns/locale';
+import toast from '../helpers/toast';
 
 class TicketsUI {
   constructor(currency) {
@@ -90,6 +90,11 @@ class TicketsUI {
       el.addEventListener('click', (e) => {
         e.preventDefault();
 
+        // eslint-disable-next-line no-param-reassign
+        el.textContent = 'In favourites';
+        el.classList.remove('orange');
+        el.classList.add('yellow');
+
         const favTicket = tickets[favIndex];
         if (this.favourites.includes(favTicket)) {
           return;
@@ -98,6 +103,7 @@ class TicketsUI {
         this.favourites.push(favTicket);
         this.initFavourites(favTicket);
         localStorage.setItem('favourites', JSON.stringify(this.favourites));
+        toast('Added to favourites', 3000, '#81c784');
       });
     });
   }
@@ -106,6 +112,7 @@ class TicketsUI {
     const currency = this.getCurrencySymbol();
     const template = TicketsUI.favTemplate(favTicket, currency);
     const delBtn = template.querySelector('button');
+    // eslint-disable-next-line no-underscore-dangle
     let _this = this;
     this.favContainer.insertAdjacentElement('beforeend', template);
     delBtn.addEventListener('click', (e) => {
@@ -121,8 +128,8 @@ class TicketsUI {
     _this.favContainer.removeChild(_this.favContainer.children[index]);
 
     _this.favourites.splice(index, 1);
-    console.log(_this.favourites);
     localStorage.setItem('favourites', JSON.stringify(this.favourites));
+    toast('The ticket deleted', 3000, '#81c784');
   }
 
   static favTemplate(ticket, currency) {
@@ -157,46 +164,7 @@ class TicketsUI {
     item.insertAdjacentElement('beforeend', deleteBtn);
     wrap.appendChild(item);
 
-    // event for deleting
-    // deleteBtn.addEventListener('click', (e) => {
-    //   e.preventDefault();
-
-    //   const allBtns = [...document.querySelectorAll('.delete-favorite')];
-    //   const index = allBtns.indexOf(deleteBtn);
-    //   const container = document.querySelector('#dropdown1');
-    //   container.removeChild(container.children[index]);
-    // });
-
     return wrap;
-    // return `
-    // <div class="favorite-item d-flex align-items-start">
-    //   <img
-    //     src="${ticket.airline_logo}"
-    //     class="favorite-item-airline-img"
-    //   />
-    //   <div class="favorite-item-info d-flex flex-column">
-    //     <div class="favorite-item-destination d-flex align-items-center">
-    //       <div class="d-flex align-items-center mr-auto">
-    //         <span class="favorite-item-city">${ticket.origin_name}</span>
-    //           <i class="medium material-icons">flight_takeoff</i>
-    //       </div>
-    //       <div class="d-flex align-items-center">
-    //         <i class="medium material-icons">flight_land</i>
-    //           <span class="favorite-item-city">${ticket.destination_name}</span>
-    //       </div>
-    //     </div>
-    //     <div class="ticket-time-price d-flex align-items-center">
-    //       <span class="ticket-time-departure">${ticket.departure_at}</span>
-    //       <span class="ticket-price ml-auto">${currency} ${ticket.price}</span>
-    //     </div>
-    //     <div class="ticket-additional-info">
-    //       <span class="ticket-transfers">${ticket.transfers}</span>
-    //       <span class="ticket-flight-number">${ticket.flight_number}</span>
-    //     </div>
-    //     <a class="waves-effect waves-light btn-small pink darken-3 delete-favorite ml-auto">Delete</a>
-    //   </div>
-    // </div>
-    // `;
   }
 }
 

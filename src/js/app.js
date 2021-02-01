@@ -6,19 +6,6 @@ import ticketsUI from './views/tickets';
 import currencyUI from './views/currency';
 
 document.addEventListener('DOMContentLoaded', () => {
-  initApp();
-  Object.values(ticketsUI.favourites).forEach((ticket) => {
-    ticketsUI.initFavourites(ticket);
-  });
-  const form = formUI.form;
-
-  // Events
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    onFormSubmit();
-  });
-
   // Handlers
   async function initApp() {
     await locations.init();
@@ -28,7 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
   async function onFormSubmit() {
     const origin = locations.getCityCodeByKey(formUI.originValue);
     const destination = locations.getCityCodeByKey(formUI.destinationValue);
+    // eslint-disable-next-line camelcase
     const depart_date = formUI.departDateValue;
+    // eslint-disable-next-line camelcase
     const return_date = formUI.returnDateValue;
     const currency = currencyUI.currencyValue;
 
@@ -43,4 +32,22 @@ document.addEventListener('DOMContentLoaded', () => {
     ticketsUI.renderTickets(locations.lastSearch);
     ticketsUI.addToFavourite(locations.lastSearch);
   }
+
+  initApp();
+
+  Object.values(ticketsUI.favourites).forEach((ticket) => {
+    ticketsUI.initFavourites(ticket);
+  });
+  const form = formUI.form;
+
+  // Events
+  document.querySelector('.favorites .btn').addEventListener('click', () => {
+    document.querySelector('#dropdown1').classList.toggle('activeDropDown');
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    onFormSubmit();
+  });
 });

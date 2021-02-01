@@ -43,10 +43,12 @@
 .header .favorites {
     margin-left: 20px;
 }
-.favorites:hover > #dropdown1 {
+
+.activeDropDown {
     opacity: 1!important;
     display: block!important;
 }
+
 .header .currency-select input.select-dropdown {
     margin: 0;
     color: #fff;
@@ -180,4 +182,39 @@
 }
 .datepicker-table td.is-selected {
     background-color: #6a1b9a!important;
+}
+
+@media (max-width: 991.98px) { 
+    nav .brand-logo {
+        left: 50%;
+        transform: unset!important;
+    }
+}
+
+@media (max-width: 575.98px) { 
+    .ticket-city {
+        font-size: 14px;
+    }
+    .ticket-destination {
+        flex-wrap: wrap!important;
+    }
+    .logo .material-icons {
+        display: none;
+    }
+    .favorites .btn {
+        position: fixed;
+        left: 20px;
+        top: 60px;
+        z-index: 9999;
+    }
+    #dropdown1 {
+        position: fixed;
+        top: 95px;
+        left: 20px;
+        width: 90%!important;
+    }
+
+    #dropdown1 .favorite-item-airline-img {
+        display: none;
+    }
 }
