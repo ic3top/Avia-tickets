@@ -1,11 +1,10 @@
 # Avia-tickets
 > An app  to search for plane tickets by the required direction and date using free API and ajax requests
-
+#### [GitHub pages](https://ic3top.github.io/Avia-tickets/dist/)
 ## Table of contents
 * [General info](#general-info)
 * [Screenshots](#screenshots)
 * [Technologies](#technologies)
-* [Setup](#setup)
 * [Features](#features)
 * [Status](#status)
 
@@ -24,8 +23,6 @@ Also I tried the Materialize framework (which I don't recommend using).
 * axios: 0.21.1
 * date-fns: 2.16.1
 
-## Setup
-[GitHub pages](https://ic3top.github.io/Avia-tickets/dist/)
 
 ## Features
 ###### List of features ready and TODOs for future development
